@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE5688D91F56F031006D56BC /* NewListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE5688D81F56F031006D56BC /* NewListViewController.storyboard */; };
 		CE0CE10E1EFCD7AA00099E62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CE10D1EFCD7AA00099E62 /* AppDelegate.swift */; };
 		CE0CE1101EFCD7AA00099E62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CE10F1EFCD7AA00099E62 /* ViewController.swift */; };
 		CE0CE1131EFCD7AA00099E62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0CE1111EFCD7AA00099E62 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE5688D81F56F031006D56BC /* NewListViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewListViewController.storyboard; sourceTree = "<group>"; };
 		CE0CE10A1EFCD7AA00099E62 /* Numkuro8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Numkuro8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0CE10D1EFCD7AA00099E62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE0CE10F1EFCD7AA00099E62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				CE7DDB3C1F25BF4600A00E02 /* NumkuroPanelManager.swift */,
 				CEC72E761F3193A9006629F3 /* CoreData */,
 				CE0CE1111EFCD7AA00099E62 /* Main.storyboard */,
+				AE5688D81F56F031006D56BC /* NewListViewController.storyboard */,
 				CE0CE1141EFCD7AA00099E62 /* Assets.xcassets */,
 				CE0CE1161EFCD7AA00099E62 /* LaunchScreen.storyboard */,
 				CE0CE1191EFCD7AA00099E62 /* Info.plist */,
@@ -309,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE5688D91F56F031006D56BC /* NewListViewController.storyboard in Resources */,
 				CE0CE1181EFCD7AA00099E62 /* LaunchScreen.storyboard in Resources */,
 				CE0CE1151EFCD7AA00099E62 /* Assets.xcassets in Resources */,
 				CE0CE1131EFCD7AA00099E62 /* Main.storyboard in Resources */,

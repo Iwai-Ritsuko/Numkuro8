@@ -25,7 +25,7 @@ class TileView: UILabel {
         layer.borderWidth = 1.0
         prepareTileView()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -60,7 +60,6 @@ class TileView: UILabel {
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        switchBorder(selected: true)
         delegate?.forcused(index: tile.index)
     }
 

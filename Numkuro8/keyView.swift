@@ -6,6 +6,8 @@
 //  Copyright © 2017年 Ritsuko Iwai. All rights reserved.
 //
 
+// LoadNunkuroViewControllerの修正ができれば削除
+
 import UIKit
 
 class KeyView: UIButton {

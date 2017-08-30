@@ -8,9 +8,23 @@
 
 import UIKit
 
+enum ManageType: Int {
+    case up = 1
+    case down = 2
+    case left = 3
+    case right = 4
+    case del = 5
+    case clearAll = 6
+}
+
+protocol NumberTextViewDelegate {
+    func updateButtonStatus(up: Bool, down: Bool, left: Bool, right: Bool)
+}
+
 class NumberTextView: UIView {
+    var delegate: NumberTextViewDelegate!
     var tileViews = [TileView]()
-    var selectedIndex = -1
+    var selectedIndex = 1
 
     func createNumberTextView(numkuros: [NumkuroTile]) {
         createFrameView()
@@ -79,6 +93,44 @@ class NumberTextView: UIView {
         return tiles
     }
 
+    // MARK - Manage Numkuro
+    func manageNumkukroWith(type: ManageType) {
+        switch type {
+        case .up:
+            up()
+        case .down:
+            down()
+        case .left:
+            left()
+        case .right:
+            right()
+        case .del:
+            del()
+        case .clearAll:
+            clearAll()
+        }
+    }
+
+    private func up() {
+        selectedIndex -= 9
+        switchBoarders()
+    }
+
+    private func down() {
+        selectedIndex += 9
+        switchBoarders()
+    }
+
+    private func left() {
+        selectedIndex -= 1
+        switchBoarders()
+    }
+
+    private func right() {
+        selectedIndex += 1
+        switchBoarders()
+    }
+
     func clearAll() {
         tileViews.forEach({
             $0.text = nil
@@ -112,15 +164,28 @@ class NumberTextView: UIView {
         tileView.update(number: number, condition:condition)
     }
 
+    func switchBoarders() {
+        for tileView in tileViews {
+            tileView.switchBorder(selected: tileView.tile.index == selectedIndex)
+        }
+    }
+
+    private func manageMove() {
+        let isTopLine = selectedIndex <= 9
+        let isBottmLine = selectedIndex >= 73
+        let isLeftLine = selectedIndex % 9 == 1
+        let isRightLine = selectedIndex % 9 == 0
+        delegate?.updateButtonStatus(up: isTopLine,
+                                     down: isBottmLine,
+                                     left: isLeftLine,
+                                     right: isRightLine)
+    }
+
 }
 
 extension NumberTextView: TileViewDelegate {
     func forcused(index: Int) {
         selectedIndex = index
-        for tileView in tileViews {
-            if tileView.tile.index != index {
-                tileView.switchBorder(selected: false)
-            }
-        }
+        switchBoarders()
     }
 }

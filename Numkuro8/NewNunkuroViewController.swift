@@ -20,10 +20,15 @@ class NewNunkuroViewController: UIViewController {
     @IBOutlet weak var padView: KeyPadView!
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var difficultyField: UITextField!
+    @IBOutlet weak var upButton: UIButton!
+    @IBOutlet weak var downButton: UIButton!
+    @IBOutlet weak var leftButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         padView.delegate = self
+        numView.delegate = self
     }
 
     override func viewDidLayoutSubviews() {
@@ -37,39 +42,45 @@ class NewNunkuroViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    func saveNunkuro() {
+    func saveNumkuro() {
         numkuroPanel.tiles = numView.currentTiles()
         delegate?.saveNewNunkuro(numkuroPanel: numkuroPanel)
     }
 
     @IBAction func back(button: UIButton) {
-        delegate?.saveNewNunkuro(numkuroPanel: numkuroPanel)
         dismiss(animated: true, completion: nil)
     }
 
     @IBAction func duplicate(button: UIButton) {
-        
-    }
 
-    @IBAction func clearAll(button: UIButton) {
-        numView.clearAll()
-    }
-
-    @IBAction func del(button: UIButton) {
-        numView.del()
     }
 
     @IBAction func save(button: UIButton) {
-        saveNunkuro()
+        saveNumkuro()
+    }
+
+    @IBAction func assist(button: UIButton) {
+        numView.manageNumkukroWith(type: ManageType(rawValue: button.tag)!)
     }
 
 }
 
-    // MARK - 入力パッド　KeyPadViewDelegate
+// MARK - 入力パッド　KeyPadViewDelegate
 extension NewNunkuroViewController: KeyPadViewDelegate {
 
     func place(number: Int) {
         numView.place(number: number, condition: .defined)
     }
+    
+}
 
+// MARK -
+extension NewNunkuroViewController: NumberTextViewDelegate {
+
+    func updateButtonStatus(up: Bool, down: Bool, left: Bool, right: Bool) {
+        upButton.isEnabled = up
+        downButton.isEnabled = down
+        leftButton.isEnabled = left
+        rightButton.isEnabled = right
+    }
 }

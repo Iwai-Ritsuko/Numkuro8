@@ -16,7 +16,7 @@ class KeyPadView: UIView {
     var delegate: KeyPadViewDelegate!
     var selectedIndex = -1
     var viewStatus: NumkuroStatus = .load
-    let tileHeight:CGFloat = 40.0
+    let tileHeight:CGFloat = 30.0
 
     func createKeyView(numkuroStatus: NumkuroStatus) {
         // 横置きの時のレイアウト要検討

@@ -61,7 +61,7 @@ class NewListViewController: UIViewController, UITableViewDelegate, UITableViewD
         while notExist {
             let numTitle = "Numkuro " + i.description
             if numkuroContents.flatMap({ $0.title })
-                                 .contains(numTitle) {
+                .contains(numTitle) {
                 i += 1
             } else {
                 notExist = false
@@ -71,8 +71,10 @@ class NewListViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func createNewNankuroView(numkuroPanel: NumkuroPanel) {
-        let storyboard = self.storyboard
-        let nextView = storyboard?.instantiateViewController(withIdentifier: "NewNumkuro") as! NewNunkuroViewController
+        let storyboard = UIStoryboard(name: "NewListViewController", bundle: Bundle.main)
+        guard let nextView = storyboard.instantiateInitialViewController() as? NewNunkuroViewController else {
+            return
+        }
         nextView.delegate = self
         nextView.numkuroPanel = numkuroPanel
         present(nextView, animated: true, completion: nil)
