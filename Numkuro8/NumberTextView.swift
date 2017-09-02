@@ -24,7 +24,7 @@ protocol NumberTextViewDelegate {
 class NumberTextView: UIView {
     var delegate: NumberTextViewDelegate!
     var tileViews = [TileView]()
-    var selectedIndex = 1
+    var selectedIndex = -1
 
     func createNumberTextView(numkuros: [NumkuroTile]) {
         createFrameView()
