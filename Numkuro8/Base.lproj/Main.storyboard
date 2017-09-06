@@ -47,7 +47,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fTR-Dz-AZl" id="i2d-3i-KJH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -147,7 +147,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IW3-Kd-vT4" id="xnx-FZ-Z3y">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -167,70 +167,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5r3-sG-Sul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1514" y="885"/>
-        </scene>
-        <!--Load Nunkuro View Controller-->
-        <scene sceneID="6Kn-7g-ADa">
-            <objects>
-                <viewController storyboardIdentifier="LoadNumkuro" id="jX0-K8-oed" customClass="LoadNunkuroViewController" customModule="Numkuro8" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="E6D-4z-wIa"/>
-                        <viewControllerLayoutGuide type="bottom" id="5l8-hX-nzH"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dgY-u9-mvM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vKb-4T-qua" customClass="NumberTextView" customModule="Numkuro8" customModuleProvider="target">
-                                <rect key="frame" x="20" y="63.5" width="339" height="417.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NOA-Tv-TTv" customClass="KeyPadView" customModule="Numkuro8" customModuleProvider="target">
-                                <rect key="frame" x="16" y="527" width="343" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92429369880000001" green="1" blue="0.97375478469999999" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGj-vW-kK7">
-                                <rect key="frame" x="20" y="25" width="241" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRd-Ev-PIZ">
-                                <rect key="frame" x="269" y="25" width="90" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUo-xo-636">
-                                <rect key="frame" x="20" y="489" width="119" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.91089906669999998" blue="0.64173439899999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="backButtonDidTappedWithButton:" destination="jX0-K8-oed" eventType="touchUpInside" id="fWp-ox-xMG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIf-12-7Ga">
-                                <rect key="frame" x="243" y="506" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <connections>
-                        <outlet property="difficultyLabel" destination="VRd-Ev-PIZ" id="Aah-Bb-xiz"/>
-                        <outlet property="numView" destination="vKb-4T-qua" id="0Xa-OX-DgQ"/>
-                        <outlet property="padView" destination="NOA-Tv-TTv" id="1x8-aM-uEi"/>
-                        <outlet property="titleLabel" destination="ZGj-vW-kK7" id="0IJ-MQ-3hD"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qek-WD-UKU" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2245.5999999999999" y="884.70764617691157"/>
         </scene>
     </scenes>
 </document>

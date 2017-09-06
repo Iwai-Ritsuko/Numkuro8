@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Nunkuro View Controller-->
+        <!--New View Controller-->
         <scene sceneID="fOU-4z-5H4">
             <objects>
-                <viewController storyboardIdentifier="NewNumkuro" id="d85-wz-0Ks" customClass="NewNunkuroViewController" customModule="Numkuro8" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewNumkuro" id="d85-wz-0Ks" customClass="NewViewController" customModule="Numkuro8" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Edm-NG-C5v"/>
                         <viewControllerLayoutGuide type="bottom" id="NyO-W3-xxj"/>

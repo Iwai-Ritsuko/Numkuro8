@@ -1,5 +1,5 @@
 //
-//  NewNunkuroViewController.swift
+//  NewViewController.swift
 //  Numkuro8
 //
 //  Created by Ritsuko Iwai on 2017/06/27.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol NewNunkuroDelegate {
-    func saveNewNunkuro(numkuroPanel: NumkuroPanel)
+protocol NewViewDelegate {
+    func saveNewNumkuro(numkuroPanel: NumkuroPanel)
 }
 
-class NewNunkuroViewController: UIViewController {
+class NewViewController: UIViewController {
     var numkuroPanel =  NumkuroPanel()
-    var delegate: NewNunkuroDelegate?
+    var delegate: NewViewDelegate?
 
     @IBOutlet weak var numView: NumberTextView!
     @IBOutlet weak var padView: KeyPadView!
@@ -44,7 +44,7 @@ class NewNunkuroViewController: UIViewController {
 
     func saveNumkuro() {
         numkuroPanel.tiles = numView.currentTiles()
-        delegate?.saveNewNunkuro(numkuroPanel: numkuroPanel)
+        delegate?.saveNewNumkuro(numkuroPanel: numkuroPanel)
     }
 
     @IBAction func back(button: UIButton) {
@@ -66,7 +66,7 @@ class NewNunkuroViewController: UIViewController {
 }
 
 // MARK - 入力パッド　KeyPadViewDelegate
-extension NewNunkuroViewController: KeyPadViewDelegate {
+extension NewViewController: KeyPadViewDelegate {
 
     func place(number: Int) {
         numView.place(number: number, condition: .defined)
@@ -75,7 +75,7 @@ extension NewNunkuroViewController: KeyPadViewDelegate {
 }
 
 // MARK -
-extension NewNunkuroViewController: NumberTextViewDelegate {
+extension NewViewController: NumberTextViewDelegate {
 
     func updateButtonStatus(up: Bool, down: Bool, left: Bool, right: Bool) {
         upButton.isEnabled = up

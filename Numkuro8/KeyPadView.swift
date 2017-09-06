@@ -9,6 +9,7 @@
 import UIKit
 
 protocol KeyPadViewDelegate {
+//    func keyPadView(_ keyPadView: KeyPadView, placeNumber: Int)
     func place(number: Int)
 }
 
@@ -49,6 +50,7 @@ class KeyPadView: UIView {
 
     func buttonTapped(sender: UIButton) {
         delegate?.place(number: sender.tag)
+//        delegate?.keyPadView(self, placeNumber: sender.tag)
     }
 
 }

@@ -12,7 +12,7 @@ protocol NewListDelegate {
     func saveNewNumkuro(contents: [NumkuroPanel])
 }
 
-class NewListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NewNunkuroDelegate {
+class NewListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var numkuroContents = [NumkuroPanel]()
     var selectedIndex = -1
     var delegate: NewListDelegate?
@@ -71,8 +71,8 @@ class NewListViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func createNewNankuroView(numkuroPanel: NumkuroPanel) {
-        let storyboard = UIStoryboard(name: "NewListViewController", bundle: Bundle.main)
-        guard let nextView = storyboard.instantiateInitialViewController() as? NewNunkuroViewController else {
+        let storyboard = UIStoryboard(name: "NewViewController", bundle: Bundle.main)
+        guard let nextView = storyboard.instantiateInitialViewController() as? NewViewController else {
             return
         }
         nextView.delegate = self
@@ -84,8 +84,10 @@ class NewListViewController: UIViewController, UITableViewDelegate, UITableViewD
         dismiss(animated: true, completion: nil)
     }
 
-    // MARK - NewNunkuroDelegate
-    func saveNewNunkuro(numkuroPanel: NumkuroPanel) {
+}
+
+extension NewListViewController: NewViewDelegate {
+    func saveNewNumkuro(numkuroPanel: NumkuroPanel) {
         if selectedIndex < numkuroContents.count {
             numkuroContents[selectedIndex] = numkuroPanel
         } else {
@@ -94,5 +96,4 @@ class NewListViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.delegate?.saveNewNumkuro(contents: numkuroContents)
         tableView.reloadData()
     }
-
 }

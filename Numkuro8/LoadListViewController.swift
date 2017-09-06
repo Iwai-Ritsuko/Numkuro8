@@ -41,8 +41,10 @@ class LoadListViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func createLoadNankuroView(numkuroPanel: NumkuroPanel) {
-        let storyboard = self.storyboard
-        let nextView = storyboard?.instantiateViewController(withIdentifier: "LoadNumkuro") as! LoadNunkuroViewController
+        let storyboard = UIStoryboard(name: "LoadViewController", bundle: Bundle.main)
+        guard let nextView = storyboard.instantiateInitialViewController() as? LoadViewController else {
+            return
+        }
         nextView.delegate = self
         nextView.numkuroPanel = numkuroPanel
         present(nextView, animated: true, completion: nil)
@@ -61,7 +63,7 @@ class LoadListViewController: UIViewController, UITableViewDelegate, UITableView
 //    }
 }
 
-extension LoadListViewController: LoadNunkuroDelegate {
+extension LoadListViewController: LoadViewDelegate {
     func saveLoadNumkuro(numkuroPanel: NumkuroPanel) {
 //        if selectedIndex < numkuroContents.count {
 //            numkuroContents[selectedIndex] = numkuroPanel

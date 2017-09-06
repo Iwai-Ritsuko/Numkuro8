@@ -1,5 +1,5 @@
 //
-//  LoadNunkuroViewController.swift
+//  LoadViewController.swift
 //  Numkuro8
 //
 //  Created by Ritsuko Iwai on 2017/06/27.
@@ -8,18 +8,22 @@
 
 import UIKit
 
-protocol LoadNunkuroDelegate {
+protocol LoadViewDelegate {
     func saveLoadNumkuro(numkuroPanel: NumkuroPanel)
 }
 
-class LoadNunkuroViewController: UIViewController {
+class LoadViewController: UIViewController {
     var numkuroPanel = NumkuroPanel()
-    var delegate: LoadNunkuroDelegate?
+    var delegate: LoadViewDelegate?
 
     @IBOutlet weak var numView: NumberTextView!
     @IBOutlet weak var padView: KeyPadView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var difficultyLabel: UILabel!
+    @IBOutlet weak var upButton: UIButton!
+    @IBOutlet weak var downButton: UIButton!
+    @IBOutlet weak var leftButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +66,7 @@ class LoadNunkuroViewController: UIViewController {
     
 }
 
-extension LoadNunkuroViewController: KeyPadViewDelegate {
+extension LoadViewController: KeyPadViewDelegate {
 
     func place(number: Int) {
         numView.place(number: number, condition: .difinishion)
